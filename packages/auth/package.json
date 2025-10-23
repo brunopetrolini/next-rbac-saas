@@ -2,11 +2,11 @@
   "name": "@acl/auth",
   "version": "0.0.0",
   "private": true,
-  "main": "index.ts",
-  "types": "index.ts",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
   "devDependencies": {
-    "@acl/prettier-config": "workspace:*",
     "@acl/eslint-config": "workspace:*",
+    "@acl/prettier-config": "workspace:*",
     "@acl/typescript-config": "workspace:*"
   },
   "eslintConfig": {
@@ -14,5 +14,8 @@
       "@acl/eslint-config/base"
     ]
   },
-  "prettier": "@acl/prettier-config"
+  "prettier": "@acl/prettier-config",
+  "dependencies": {
+    "@casl/ability": "^6.7.3"
+  }
 }
