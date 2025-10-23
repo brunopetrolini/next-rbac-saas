@@ -4,9 +4,7 @@
   "private": true,
   "license": "MIT",
   "files": [
-    "base.json"
-  ],
-  "devDependencies": {
-    "@tsconfig/vite-react": "^7.0.1"
-  }
+    "base.json",
+    "node.json"
+  ]
 }
