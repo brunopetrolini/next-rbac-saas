@@ -1,0 +1,23 @@
+{
+  "name": "@acl/api",
+  "version": "1.0.0",
+  "dependencies": {
+    "@acl/auth": "workspace:*"
+  },
+  "devDependencies": {
+    "@acl/eslint-config": "workspace:*",
+    "@acl/prettier-config": "workspace:*",
+    "@acl/typescript-config": "workspace:*",
+    "@types/node": "^24.9.1",
+    "tsx": "^4.20.6"
+  },
+  "prettier": "@acl/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@acl/eslint-config/node"
+    ]
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts"
+  }
+}
