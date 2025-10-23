@@ -36,7 +36,23 @@ importers:
         specifier: ^0.7.1
         version: 0.7.1(prettier@3.6.2)
 
-  config/typescript-config: {}
+  config/typescript-config:
+    devDependencies:
+      '@tsconfig/vite-react':
+        specifier: ^7.0.1
+        version: 7.0.1
+
+  packages/auth:
+    devDependencies:
+      '@acl/eslint-config':
+        specifier: workspace:*
+        version: link:../../config/eslint-config
+      '@acl/prettier-config':
+        specifier: workspace:*
+        version: link:../../config/prettier-config
+      '@acl/typescript-config':
+        specifier: workspace:*
+        version: link:../../config/typescript-config
 
 packages:
 
@@ -98,6 +114,9 @@ packages:
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
+
+  '@tsconfig/vite-react@7.0.1':
+    resolution: {integrity: sha512-IVbW532kRhqqiMbX1N+vnGYb+B6vNBw5FM/QXh1wGZOHG8HNeBzGEO8irFSNQUThg9mAHiNirCdwjsYeRyvU+Q==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -1408,6 +1427,8 @@ snapshots:
       - supports-color
 
   '@rtsao/scc@1.1.0': {}
+
+  '@tsconfig/vite-react@7.0.1': {}
 
   '@types/json-schema@7.0.15': {}
 
