@@ -46,3 +46,24 @@ This project contains all the necessary boilerplate to setup a multi-tenant SaaS
 - Administrator
 - Member
 - Billing
+
+## Permissions table
+
+|                      | Administrator | Member | Billing | Anonymous |
+| -------------------- | ------------- | ------ | ------- | --------- |
+| Update organization    | ✅            | ❌      | ❌      | ❌
+| Delete organization    | ✅            | ❌      | ❌      | ❌
+| Invite a member        | ✅            | ❌      | ❌      | ❌
+| Revoke an invite       | ✅            | ❌      | ❌      | ❌
+| List members           | ✅            | ✅      | ✅      | ❌
+| Transfer ownership     | ⚠️            | ❌      | ❌      | ❌
+| Update member role     | ✅            | ❌      | ❌      | ❌
+| Delete member          | ✅            | ⚠️      | ❌      | ❌
+| List projects          | ✅            | ✅      | ✅      | ❌
+| Create a new project   | ✅            | ✅      | ❌      | ❌
+| Update a project       | ✅            | ⚠️      | ❌      | ❌
+| Delete a project       | ✅            | ⚠️      | ❌      | ❌
+| Get billing details    | ✅            | ❌      | ✅      | ❌
+| Export billing details | ✅            | ❌      | ✅      | ❌
+
+> ✅ = allowed ❌ = not allowed ⚠️ = allowed w/ conditions
