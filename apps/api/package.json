@@ -4,6 +4,8 @@
   "dependencies": {
     "@acl/auth": "workspace:*",
     "@fastify/cors": "^11.1.0",
+    "@prisma/client": "6.18.0",
+    "dotenv": "^17.2.3",
     "fastify": "^5.6.1",
     "fastify-type-provider-zod": "^6.1.0",
     "zod": "^4.1.12"
@@ -13,6 +15,7 @@
     "@acl/prettier-config": "workspace:*",
     "@acl/typescript-config": "workspace:*",
     "@types/node": "^24.9.1",
+    "prisma": "^6.18.0",
     "tsx": "^4.20.6"
   },
   "prettier": "@acl/prettier-config",
