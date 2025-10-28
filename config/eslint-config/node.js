@@ -10,4 +10,12 @@ module.exports = {
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
   },
+  overrides: [
+    {
+      files: ['**/routes/**/*'],
+      rules: {
+        camelcase: 'off',
+      },
+    },
+  ],
 }

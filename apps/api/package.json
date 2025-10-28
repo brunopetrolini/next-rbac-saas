@@ -15,6 +15,7 @@
     "@acl/eslint-config": "workspace:*",
     "@acl/prettier-config": "workspace:*",
     "@acl/typescript-config": "workspace:*",
+    "@faker-js/faker": "^10.1.0",
     "@types/bcryptjs": "^3.0.0",
     "@types/node": "^24.9.1",
     "prisma": "^6.18.0",
