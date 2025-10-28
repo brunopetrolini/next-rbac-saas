@@ -11,6 +11,8 @@ export async function createAccount(app: FastifyInstance) {
     {
       schema: {
         summary: 'Create a new user account',
+        description:
+          "Creates a new user account with the provided details. If the user's email domain matches an organization that has automatic user attachment enabled, the user will be automatically added to that organization.",
         tags: ['Authentication'],
         body: z.object({
           name: z
@@ -39,6 +41,15 @@ export async function createAccount(app: FastifyInstance) {
         return reply.status(409).send({ message: 'Email is already in use' })
       }
 
+      const domain = email.split('@')[1]
+
+      const autoJoinOrganization = await prisma.organization.findFirst({
+        where: {
+          domain,
+          shouldAttachUsersByDomain: true,
+        },
+      })
+
       const passwordHash = await hash(password, 6)
       await prisma.user.create({
         data: {
@@ -46,6 +57,13 @@ export async function createAccount(app: FastifyInstance) {
           email,
           passwordHash,
           avatarUrl: avatar_url,
+          memberOn: autoJoinOrganization
+            ? {
+                create: {
+                  organizationId: autoJoinOrganization.id,
+                },
+              }
+            : undefined,
         },
       })
 
