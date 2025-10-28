@@ -4,7 +4,9 @@
   "dependencies": {
     "@acl/auth": "workspace:*",
     "@fastify/cors": "^11.1.0",
+    "@fastify/swagger": "^9.5.2",
     "@prisma/client": "6.18.0",
+    "@scalar/fastify-api-reference": "^1.38.1",
     "bcryptjs": "^3.0.2",
     "dotenv": "^17.2.3",
     "fastify": "^5.6.1",

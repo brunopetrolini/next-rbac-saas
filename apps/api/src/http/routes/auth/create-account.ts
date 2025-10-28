@@ -10,6 +10,8 @@ export async function createAccount(app: FastifyInstance) {
     '/users',
     {
       schema: {
+        summary: 'Create a new user account',
+        tags: ['Authentication'],
         body: z.object({
           name: z
             .string({ message: 'Name is required' })
@@ -20,6 +22,10 @@ export async function createAccount(app: FastifyInstance) {
             .min(6, { message: 'Password must be at least 6 characters long' }),
           avatar_url: z.url().optional(),
         }),
+        response: {
+          201: z.void(),
+          409: z.object({ message: z.string() }),
+        },
       },
     },
     async (request, reply) => {
