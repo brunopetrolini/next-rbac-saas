@@ -29,5 +29,8 @@
   },
   "scripts": {
     "dev": "tsx watch src/http/server.ts"
+  },
+  "prisma": {
+    "seed": "tsx ./prisma/seed.ts"
   }
 }

@@ -7,6 +7,8 @@ const prisma = new PrismaClient()
 async function seed() {
   await prisma.organization.deleteMany()
   await prisma.user.deleteMany()
+  await prisma.project.deleteMany()
+  await prisma.member.deleteMany()
 
   const passwordHash = await hash('securepassword', 1)
   const [firstUser, secondUser, thirdUser] =
@@ -20,13 +22,13 @@ async function seed() {
         },
         {
           name: faker.person.fullName(),
-          email: faker.internet.email(),
+          email: faker.internet.email().toLowerCase(),
           avatarUrl: faker.image.avatarGitHub(),
           passwordHash,
         },
         {
           name: faker.person.fullName(),
-          email: faker.internet.email(),
+          email: faker.internet.email().toLowerCase(),
           avatarUrl: faker.image.avatarGitHub(),
           passwordHash,
         },
@@ -47,6 +49,7 @@ async function seed() {
             {
               name: faker.lorem.words(5),
               slug: faker.lorem.slug(5),
+              description: faker.lorem.paragraph(),
               ownerId: faker.helpers.arrayElement([
                 firstUser.id,
                 secondUser.id,
@@ -56,6 +59,7 @@ async function seed() {
             {
               name: faker.lorem.words(5),
               slug: faker.lorem.slug(5),
+              description: faker.lorem.paragraph(),
               ownerId: faker.helpers.arrayElement([
                 firstUser.id,
                 secondUser.id,
@@ -65,6 +69,7 @@ async function seed() {
             {
               name: faker.lorem.words(5),
               slug: faker.lorem.slug(5),
+              description: faker.lorem.paragraph(),
               ownerId: faker.helpers.arrayElement([
                 firstUser.id,
                 secondUser.id,
@@ -107,6 +112,7 @@ async function seed() {
             {
               name: faker.lorem.words(5),
               slug: faker.lorem.slug(5),
+              description: faker.lorem.paragraph(),
               ownerId: faker.helpers.arrayElement([
                 firstUser.id,
                 secondUser.id,
@@ -116,6 +122,7 @@ async function seed() {
             {
               name: faker.lorem.words(5),
               slug: faker.lorem.slug(5),
+              description: faker.lorem.paragraph(),
               ownerId: faker.helpers.arrayElement([
                 firstUser.id,
                 secondUser.id,
@@ -125,6 +132,7 @@ async function seed() {
             {
               name: faker.lorem.words(5),
               slug: faker.lorem.slug(5),
+              description: faker.lorem.paragraph(),
               ownerId: faker.helpers.arrayElement([
                 firstUser.id,
                 secondUser.id,
@@ -167,6 +175,7 @@ async function seed() {
             {
               name: faker.lorem.words(5),
               slug: faker.lorem.slug(5),
+              description: faker.lorem.paragraph(),
               ownerId: faker.helpers.arrayElement([
                 firstUser.id,
                 secondUser.id,
@@ -176,6 +185,7 @@ async function seed() {
             {
               name: faker.lorem.words(5),
               slug: faker.lorem.slug(5),
+              description: faker.lorem.paragraph(),
               ownerId: faker.helpers.arrayElement([
                 firstUser.id,
                 secondUser.id,
@@ -185,6 +195,7 @@ async function seed() {
             {
               name: faker.lorem.words(5),
               slug: faker.lorem.slug(5),
+              description: faker.lorem.paragraph(),
               ownerId: faker.helpers.arrayElement([
                 firstUser.id,
                 secondUser.id,
