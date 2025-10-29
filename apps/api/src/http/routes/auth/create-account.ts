@@ -17,7 +17,8 @@ export async function createAccount(app: FastifyInstance) {
         body: z.object({
           name: z
             .string({ message: 'Name is required' })
-            .min(3, { message: 'Name must be at least 3 characters long' }),
+            .min(3, { message: 'Name must be at least 3 characters long' })
+            .optional(),
           email: z.email({ message: 'Email is required' }),
           password: z
             .string({ message: 'Password is required' })
